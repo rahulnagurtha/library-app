@@ -7,6 +7,5 @@ composer.lock
 .DS_Store
 Thumbs.db
 =======
-.env.*.php
-.env.php
+.idea
 >>>>>>> 17862824ddde7ff65bdb15757c390feabf15870d
