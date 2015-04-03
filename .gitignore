@@ -6,6 +6,6 @@ composer.lock
 .env.php
 .DS_Store
 Thumbs.db
-=======
 .idea
+=======
 >>>>>>> 17862824ddde7ff65bdb15757c390feabf15870d

@@ -52,6 +52,7 @@ return array(
     'File_ASN1' => $vendorDir . '/phpseclib/phpseclib/phpseclib/File/ASN1.php',
     'File_ASN1_Element' => $vendorDir . '/phpseclib/phpseclib/phpseclib/File/ASN1.php',
     'File_X509' => $vendorDir . '/phpseclib/phpseclib/phpseclib/File/X509.php',
+    'ForeignKeys' => $baseDir . '/app/database/migrations/2015_04_03_154258_foreign_keys.php',
     'GuzzleHttp\\Adapter\\AdapterInterface' => $vendorDir . '/guzzlehttp/guzzle/src/Adapter/AdapterInterface.php',
     'GuzzleHttp\\Adapter\\Curl\\BatchContext' => $vendorDir . '/guzzlehttp/guzzle/src/Adapter/Curl/BatchContext.php',
     'GuzzleHttp\\Adapter\\Curl\\CurlAdapter' => $vendorDir . '/guzzlehttp/guzzle/src/Adapter/Curl/CurlAdapter.php',
