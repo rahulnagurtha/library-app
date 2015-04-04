@@ -8,7 +8,8 @@
 		"laravel/framework": "4.2.*",
 		"barryvdh/laravel-ide-helper": "~1.11",
 		"guzzlehttp/guzzle": "~4.0",
-		"ollieread/multiauth": "dev-master"
+		"ollieread/multiauth": "dev-master",
+        "indatus/dispatcher": "1.4.*@dev"
 	},
 	"autoload": {
 		"classmap": [

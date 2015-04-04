@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://localhost/library-app/public',
+	'url' => 'http://localhost/Projects/library-app/public',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -124,6 +124,7 @@ return array(
         'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
         'Ollieread\Multiauth\MultiauthServiceProvider',
         'Ollieread\Multiauth\Reminders\ReminderServiceProvider',
+        'Indatus\Dispatcher\ServiceProvider',
 
 	),
 
