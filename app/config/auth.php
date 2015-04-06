@@ -4,11 +4,11 @@ return array(
     'multi' => array(
         'user' => array(
             'driver' => 'eloquent',
-            'table' => 'users'
+            'model' => 'User'
         ),
-        array(
-            'driver' => 'database',
-            'table' => 'admin'
+        'admin' => array(
+            'driver' => 'eloquent',
+            'model' => 'Admin'
         )
     ),
 

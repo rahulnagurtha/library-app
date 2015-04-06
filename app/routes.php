@@ -10,9 +10,6 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
-Route::get('/', ['as' => 'home', 'uses' => 'HomeController@showWelcome']);
-
 /*****************************************     UserController     *****************************************************/
 Route::get('home', ['as' => 'home', 'uses' => 'UserController@home']);
 Route::get('accounts', ['as' => 'accounts', 'uses' => 'UserController@accounts']);
@@ -26,3 +23,12 @@ Route::get('login', ['as' => 'login', 'uses' => 'UserController@login']);
 
 /*AdminController*/
 Route::get('admin', ['as' => 'admin', 'uses' => 'AdminController@hello']);
+Route::get('user', ['as' => 'user', 'uses' => 'UserController@hello']);
+Route::get('admin/login', ['as' => 'adminlogin', 'uses' => 'AdminController@login']);
+Route::post('admin/login', ['as' => 'adminlogin', 'uses' => 'AdminController@postlogin']);
+Route::get('admin/logout', ['as' => 'adminlogout', 'uses' => 'AdminController@logout']);
+
+Route::group(array('before'=>'auth.admin'),function()
+{
+    Route::get('test', ['as' => 'home', 'uses' => 'AdminController@abcd']);
+});

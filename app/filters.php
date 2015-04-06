@@ -58,7 +58,7 @@ Route::filter('auth.admin', function()
         }
         else
         {
-            return Redirect::guest('login');
+            return Redirect::guest('admin/login');
         }
     }
 });

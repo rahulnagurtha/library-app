@@ -90,6 +90,7 @@ class CreateTables extends Migration {
             $table->string('email');
             $table->timestamps();
             $table->softDeletes();
+            $table->rememberToken();
         });
 
         Schema::create('new_add_options',function(Blueprint $table)
@@ -163,7 +164,17 @@ class CreateTables extends Migration {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('book_id');
             $table->unsignedBigInteger('user_id');
-            $table->enum('transaction_type',['ISSUE','REISSUE','MBT','FINE_PAID']);
+            $table->enum('transaction_type',['ISSUE','REISSUE','MBT','FINE_PAID','LB_REPORTED','LB_UPDATED','LB_ACC','LB_REJ']);
+            $table->timestamps();
+        });
+
+        Schema::create('env_vars', function(Blueprint $table)
+        {
+            $table->increments('id');
+            $table->string('variable');
+            $table->string('value');
+            $table->string('description');
+            $table->timestamps();
         });
 	}
 
