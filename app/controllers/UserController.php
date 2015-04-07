@@ -34,6 +34,10 @@ class UserController extends BaseController {
     {
         return View::make('user.login');
     }
+    public function lock_screen()
+    {
+        return View::make('user.lock_screen');
+    }
 
 
 }

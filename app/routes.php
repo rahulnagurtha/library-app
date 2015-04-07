@@ -19,6 +19,8 @@ Route::get('contacts', ['as' => 'contacts', 'uses' => 'UserController@contacts']
 Route::get('lost_book', ['as' => 'lost_book', 'uses' => 'UserController@lost_book']);
 Route::get('donate_book', ['as' => 'donate_book', 'uses' => 'UserController@donate_book']);
 Route::get('login', ['as' => 'login', 'uses' => 'UserController@login']);
+
+Route::get('lock_screen', ['as' => 'lock_screen', 'uses' => 'UserController@lock_screen']);
 /**********************************************************************************************************************/
 
 /*AdminController*/

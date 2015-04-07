@@ -33,7 +33,7 @@
     TOP BAR CONTENT & NOTIFICATIONS
     *********************************************************************************************************************************************************** -->
     <!--header start-->
-    <header class="header black-bg" style="background-color: #68dff0;">
+    <header class="header black-bg" style="background-color: #ffd777;">
         <div class="sidebar-toggle-box">
             <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
         </div>
@@ -43,6 +43,7 @@
 
         <div class="top-menu">
             <ul class="nav pull-right top-menu">
+                <li><a class="logout" href="{{route('lock_screen')}}">Lock Screen</a></li>
                 <li><a class="logout" href="{{route('login')}}">Logout</a></li>
             </ul>
         </div>
@@ -71,7 +72,7 @@
                 <li  class="sub-menu">
                     <a class="@yield('user-accounts')" href="{{route('accounts')}}" >
                         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-                        <span>&nbsp&nbsp&nbspAccounts</span>
+                        <span>&nbsp&nbsp&nbspMy Account</span>
                     </a>
                 </li>
 
@@ -128,7 +129,7 @@
 
     <!--main content end-->
     <!--footer start-->
-    <footer class=" site-footer navbar navbar-inverse navbar-fixed-bottom ">
+    <footer class=" site-footer ">
         <div class="text-center">
             2015 - IITG CSE LIBRARY
             <a href="#" class="go-top">
@@ -152,8 +153,9 @@
 <!--common script for all pages-->
 <script src="{{asset('user-assets/js/common-scripts.js')}}"></script>
 
-<!--script for this page-->
 
+<!--script for this page-->
+@yield('scripts')
 <script>
     //custom select box
 
@@ -162,7 +164,7 @@
     });
 
 </script>
-@yield('scripts')
+
 
 </body>
 </html>
