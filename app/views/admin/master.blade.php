@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>CRep Panel | Technothlon</title>
+    <title>Admin</title>
     <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
     <!-- Bootstrap 3.3.2 -->
     <link href="{{ asset('bootstrap/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
@@ -24,12 +24,12 @@
     <![endif]-->
     @yield('head')
 </head>
-<body class="skin-black">
+<body class="skin-yellow">
 <!-- Site wrapper -->
 <div class="wrapper">
 
     <header class="main-header">
-        <a href="../../index2.html" class="logo"><img src="{{ asset('images/technothlon.png') }}" class="img-responsive" style="height: 70%; margin: auto; margin-top: 2.5%"></a>
+        <a href="../../index2.html" class="logo">Admin Panel</a>
         <!-- Header Navbar: style can be found in header.less -->
         <nav class="navbar navbar-static-top" role="navigation">
             <!-- Sidebar toggle button-->
@@ -44,16 +44,15 @@
                     <!-- User Account: style can be found in dropdown.less -->
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="{{ asset('images/logo-white-background.jpg') }}" class="user-image" alt="User Image"/>
-                            <span class="hidden-xs">Aneesh Dash</span>
+                            <span class="hidden-xs">Admin</span>
                         </a>
                         <ul class="dropdown-menu">
                             <!-- User image -->
                             <li class="user-header">
                                 <img src="{{ asset('images/logo-white-background.jpg') }}" class="img-circle" alt="User Image" />
                                 <p>
-                                    Aneesh Dash
-                                    <small>Puri</small>
+                                    Admin
+                                    <small>Library</small>
                                 </p>
                             </li>
                             <!-- Menu Footer-->
@@ -62,7 +61,7 @@
                                     <a href="#" class="btn btn-default btn-flat">Profile</a>
                                 </div>
                                 <div class="pull-right">
-                                    <a href="{{ route('adminlogout') }}" class="btn btn-default btn-flat">Sign out</a>
+                                    <a href="#" class="btn btn-default btn-flat">Sign out</a>
                                 </div>
                             </li>
                         </ul>
@@ -81,18 +80,28 @@
             <!-- Sidebar user panel -->
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="{{ asset('images/mascot-white.png') }}" class="img-circle" alt="User Image" />
+                    
                 </div>
                 <div class="pull-left info">
-                    <p>Aneesh Dash</p>
+                    <p>Admin</p>
                 </div>
             </div>
             <!-- sidebar menu: : style can be found in sidebar.less -->
             <ul class="sidebar-menu">
                 <li class="header">MAIN NAVIGATION</li>
                 <li class="treeview">
-                    <a href="#">
-                        <i class="fa fa-table"></i> <span>Registrations</span>
+                    <a href="{{ route('admin') }}">
+                        <i class="fa fa-table"></i> <span>Issue & Reissue</span>
+                    </a>
+                </li>
+                <li class="treeview">
+                    <a href="{{ route('adminupdate') }}">
+                        <i class="fa fa-envelope"></i> <span>Post Update</span>
+                    </a>
+                </li>
+                  <li class="treeview">
+                    <a href="{{ route('adminlostbook') }}">
+                        <i class="fa fa-book"></i><span>Lost Books</span>
                     </a>
                 </li>
             </ul>
@@ -108,7 +117,7 @@
     </div><!-- /.content-wrapper -->
 
     <footer class="main-footer">
-        <strong>Copyright &copy; 2014-2015 <a href="http://technothlon.techniche.org">Technothlon</a>.</strong> All rights reserved.
+        <strong>Copyright &copy; 2014-2015 <a href="">Admin Page</a>.</strong> All rights reserved.
     </footer>
 </div><!-- ./wrapper -->
 
