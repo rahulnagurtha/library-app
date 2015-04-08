@@ -3,6 +3,7 @@
     @endsection
 @section('content')
         {{ Hash::make('pass') }}
+        {{ App::environment() }}
     @endsection
 
 @section('script')

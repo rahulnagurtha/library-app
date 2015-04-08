@@ -19,18 +19,22 @@ Route::get('contacts', ['as' => 'contacts', 'uses' => 'UserController@contacts']
 Route::get('lost_book', ['as' => 'lost_book', 'uses' => 'UserController@lost_book']);
 Route::get('donate_book', ['as' => 'donate_book', 'uses' => 'UserController@donate_book']);
 Route::get('login', ['as' => 'login', 'uses' => 'UserController@login']);
-
+Route::post('login', ['as' => 'login', 'uses' => 'UserController@postlogin']);
 Route::get('lock_screen', ['as' => 'lock_screen', 'uses' => 'UserController@lock_screen']);
+Route::get('logout', ['as' => 'logout', 'uses' => 'UserController@logout']);
 /**********************************************************************************************************************/
 
 /*AdminController*/
-Route::get('admin', ['as' => 'admin', 'uses' => 'AdminController@hello']);
-Route::get('user', ['as' => 'user', 'uses' => 'UserController@hello']);
+Route::get('admin', ['as' => 'admin', 'uses' => 'AdminController@test']);
 Route::get('admin/login', ['as' => 'adminlogin', 'uses' => 'AdminController@login']);
 Route::post('admin/login', ['as' => 'adminlogin', 'uses' => 'AdminController@postlogin']);
 Route::get('admin/logout', ['as' => 'adminlogout', 'uses' => 'AdminController@logout']);
+Route::get('admin/update', ['as' => 'adminupdate', 'uses' => 'AdminController@update']);
+Route::get('admin/lostbook', ['as' => 'adminlostbook', 'uses' => 'AdminController@lost']);
+Route::get('admin/user', ['as' => 'adminuser', 'uses' => 'AdminController@userprofile']);
+Route::get('admin/tables/users', ['as' => 'tabuser', 'uses' => 'AdminController@tabusers']);
 
 Route::group(array('before'=>'auth.admin'),function()
 {
-    Route::get('test', ['as' => 'home', 'uses' => 'AdminController@abcd']);
+    Route::get('test', ['as' => 'test', 'uses' => 'AdminController@test']);
 });

@@ -27,7 +27,8 @@
         "Barryvdh\\LaravelIdeHelper\\IdeHelperServiceProvider",
         "Ollieread\\Multiauth\\MultiauthServiceProvider",
         "Ollieread\\Multiauth\\Reminders\\ReminderServiceProvider",
-        "Indatus\\Dispatcher\\ServiceProvider"
+        "Indatus\\Dispatcher\\ServiceProvider",
+        "Maatwebsite\\Excel\\ExcelServiceProvider"
     ],
     "eager": [
         "Illuminate\\Cookie\\CookieServiceProvider",
@@ -37,7 +38,8 @@
         "Illuminate\\Session\\SessionServiceProvider",
         "Illuminate\\View\\ViewServiceProvider",
         "Illuminate\\Workbench\\WorkbenchServiceProvider",
-        "Ollieread\\Multiauth\\MultiauthServiceProvider"
+        "Ollieread\\Multiauth\\MultiauthServiceProvider",
+        "Maatwebsite\\Excel\\ExcelServiceProvider"
     ],
     "deferred": {
         "artisan": "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",

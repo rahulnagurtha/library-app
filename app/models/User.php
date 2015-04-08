@@ -1,26 +1,30 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: shivam
+ * Date: 4/8/2015
+ * Time: 3:21 PM
+ */
 
-use Illuminate\Auth\UserTrait;
-use Illuminate\Auth\UserInterface;
-use Illuminate\Auth\Reminders\RemindableTrait;
-use Illuminate\Auth\Reminders\RemindableInterface;
+class Users extends Illuminate\Database\Eloquent{
+    use UserTrait, RemindableTrait;
 
-class User extends Eloquent implements UserInterface, RemindableInterface {
 
-	use UserTrait, RemindableTrait;
+    protected $hidden = array('password', 'remember_token');
+    protected $table='users';
 
-	/**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
-	protected $table = 'users';
+    function books() {
+        return $this->hasMany('Books');
+    }
 
-	/**
-	 * The attributes excluded from the model's JSON form.
-	 *
-	 * @var array
-	 */
-	protected $hidden = array('password', 'remember_token');
+    function lost_books() {
+        return $this->hasMany('LostBooks');
+    }
+    function ratings() {
+        return $this->hasMany('Ratings');
+    }
+    function feedback() {
+        return $this->hasOne('Feedback');
+    }
 
 }

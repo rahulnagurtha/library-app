@@ -22,11 +22,11 @@
                         <p><img src="{{asset('user-assets/img/icon.jpg')}}" class="img-circle" width="80"></p>
                         <p><b>Sweta Agrawal</b></p>
                         <div class="row">
-                            <div class="col-md-6" style="color:Black;>
+                            <div class="col-md-6" style="color:Black;">
                                 <p class="small mt">BATCH OF</p>
                                 <p>2017</p>
                             </div>
-                            <div class="col-md-6" style="color:Black;>
+                            <div class="col-md-6" style="color:Black;">
                                 <p class="small mt">Roll no.:</p>
 
                                 <p>130101089</p>
