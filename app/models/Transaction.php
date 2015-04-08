@@ -8,13 +8,14 @@
 
 class Transactions extends Eloquent
 {
+    use SoftDeletingTrait;
     protected $table = 'transactions';
 
     function user()
     {
         return $this->belongsToMany('User');
     }
-    function books()
+    function book()
     {
         return $this->belongsToMany('Book');
     }

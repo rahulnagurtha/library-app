@@ -7,7 +7,7 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 
 class Admin extends Eloquent implements UserInterface, RemindableInterface {
 
-    use UserTrait, RemindableTrait;
+    use UserTrait, RemindableTrait, SoftDeletingTrait;
 
     /**
      * The database table used by the model.

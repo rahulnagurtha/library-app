@@ -7,14 +7,15 @@
  */
 
 class LostBooks {
+    use SoftDeletingTrait;
     protected $table='lost_book';
 
-    function books()
+    function book()
     {
         return $this->belongsTo('Book');
     }
 
-    function users() {
+    function user() {
         return $this->belongsTo('User');
     }
 }

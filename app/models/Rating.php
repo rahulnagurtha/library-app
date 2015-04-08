@@ -8,13 +8,14 @@
 
 class Ratings extends Eloquent
 {
+    use SoftDeletingTrait;
     protected $table = 'book_ratings';
 
-    function users()
+    function user()
     {
         return $this->belongsToMany('User');
     }
-    function books()
+    function book()
     {
         return $this->belongsToMany('Book');
     }

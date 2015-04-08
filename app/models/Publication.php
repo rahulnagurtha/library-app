@@ -8,9 +8,10 @@
 
 class Publications extends Eloquent
 {
+    use SoftDeletingTrait;
     protected $table = 'publications';
 
-    function books()
+    function book()
     {
         return $this->hasMany('Book');
     }

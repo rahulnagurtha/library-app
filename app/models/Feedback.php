@@ -8,9 +8,10 @@
 
 class Feedback extends Eloquent
 {
+    use SoftDeletingTrait;
     protected $table = 'feedback';
 
-    function users()
+    function user()
     {
         return $this->belongsTo('User');
     }

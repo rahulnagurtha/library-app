@@ -6,7 +6,9 @@
  * Time: 10:41 AM
  */
 
-class Books extends Eloquent {
+class Books extends Eloquent
+{
+    use SoftDeletingTrait;
     protected $table='books';
 
     function category() {
@@ -14,7 +16,7 @@ class Books extends Eloquent {
     }
 
     function publication() {
-        return $this->belongsTo('Publications');
+        return $this->belongsTo('Publication');
     }
 
 
@@ -24,12 +26,12 @@ class Books extends Eloquent {
 
 
     function lost(){
-        return $this->hasOne('LostBooks');
+        return $this->hasOne('LostBook');
     }
 
 
     function transaction(){
-        return $this->hasMany('Transactions');
+        return $this->hasMany('Transaction');
     }
 
 }

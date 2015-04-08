@@ -6,8 +6,13 @@
  * Time: 3:21 PM
  */
 
-class Users extends Illuminate\Database\Eloquent{
-    use UserTrait, RemindableTrait;
+use Illuminate\Auth\UserTrait;
+use Illuminate\Auth\UserInterface;
+use Illuminate\Auth\Reminders\RemindableTrait;
+use Illuminate\Auth\Reminders\RemindableInterface;
+
+class Users extends Eloquent{
+    use UserTrait, RemindableTrait, SoftDeletingTrait;
 
 
     protected $hidden = array('password', 'remember_token');

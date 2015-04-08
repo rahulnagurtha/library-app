@@ -8,13 +8,14 @@
 
 class Category extends Eloquent
 {
+    use SoftDeletingTrait;
     protected $table = 'book_category';
 
     function user()
     {
         return $this->belongsToMany('User');
     }
-    function books()
+    function book()
     {
         return $this->belongsToMany('Book');
     }
