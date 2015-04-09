@@ -6,7 +6,7 @@
  * Time: 10:41 AM
  */
 
-class Transactions extends Eloquent
+class Transaction extends Eloquent
 {
     use SoftDeletingTrait;
     protected $table = 'transactions';

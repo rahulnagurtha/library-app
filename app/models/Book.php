@@ -6,7 +6,7 @@
  * Time: 10:41 AM
  */
 
-class Books extends Eloquent
+class Book extends Eloquent
 {
     use SoftDeletingTrait;
     protected $table='books';

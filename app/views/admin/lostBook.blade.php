@@ -6,7 +6,7 @@
 
 	<section class="content">
 	<?php
-    $new=DB::table('lost_book')->where('id',2)->first();
+    $new=DB('lost_book')::where('id',2)->first();.
 		$old=DB::table('books')->where('id',$new->book_id)->first();
     $usr=DB::table('users')->where('id',$new->user_id)->pluck('name');
     $pub=DB::table('publications')->where('id',$old->publication_id)->pluck('name');

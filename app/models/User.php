@@ -11,7 +11,7 @@ use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class Users extends Eloquent{
+class User extends Eloquent{
     use UserTrait, RemindableTrait, SoftDeletingTrait;
 
 
