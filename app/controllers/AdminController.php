@@ -67,8 +67,8 @@ class AdminController extends BaseController {
     {
 //        Mail::send('emails.testmail', array('name' => 'Kunaal Jain') ,function($message)
 //        {
-//            $message->from('chetluru@iitg.ernet.in', 'Aneesh Dash');
-//            $message->to('a.dash@iitg.ernet.in', 'Revanth')->subject('Hello!');
+//            $message->from('a.dash@iitg.ernet.in', 'Aneesh Dash');
+//            $message->to('aneeshdash@gmail.com', 'Aneesh Dash')->subject('Hello!');
 //        });
         return View::make('admin.home');
     }

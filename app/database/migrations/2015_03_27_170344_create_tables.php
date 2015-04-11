@@ -100,6 +100,7 @@ class CreateTables extends Migration {
             $table->string('author');
             $table->string('publication');
             $table->string('edition');
+            $table->unsignedBigInteger('user_id');
             $table->integer('votes');
             $table->timestamps();
             $table->softDeletes();

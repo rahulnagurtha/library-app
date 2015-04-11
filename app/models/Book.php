@@ -21,7 +21,7 @@ class Book extends Eloquent
 
 
     function user() {
-        return $this->belongsTo('User');
+        return $this->belongsTo('User','issue');
     }
 
 

@@ -16,14 +16,14 @@
             Users Table
             <small>it starts here</small>
         </h1>
-        <button class="btn btn-primary btn-lg" style="margin-top: 1%" onclick="add()">+ Add User</button>
+        <button class="btn btn-primary btn-lg" style="margin-top: 1%" data-toggle="modal" data-target="#newModal">+ Add User</button>
     </section>
     <section class="content">
         <div class="row">
             <div class="col-xs-12">
                 <div class="box">
             <div class="box-header">
-                <h3 class="box-title">Data Table With Full Features</h3>
+                <h3 class="box-title">Details of Users</h3>
             </div><!-- /.box-header -->
             <div class="box-body">
                 <table id="table" class="table table-bordered table-hover">
@@ -60,9 +60,9 @@
                                 Faculty
                                 @endif
                         </td>
-                        <td><div class="btn-group">
-                                <button type="button" class="btn btn-info" onclick="edit({{ $i }}, this.id)" id="BTECH">Edit</button>
-                                <button type="button" class="btn btn-danger" onclick="del({{ $user->id }})">Delete</button>
+                        <td id="hi"><div class="btn-group">
+                                <button type="button" class="btn btn-info" onclick="edit({{ $i }}, this.id, {{ $user->id }})" id="{{ $user->type }}">Edit</button>
+                                <button type="button" class="btn btn-danger" onclick="del({{ $user->id }}, {{ $i }})" id="del">Delete</button>
                             </div></td>
                     </tr>
                         <?php $i++; ?>
@@ -88,29 +88,30 @@
     <!-- Modal -->
     <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
+            <form class="form-horizontal" role="form" id="edit">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel">Modal title</h4>
                 </div>
                 <div class="modal-body">
-                    <form class="form-horizontal" role="form">
+
                         <div class="form-group">
                             <label for="firstname" class="col-sm-3 control-label">Name:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="name" placeholder="Enter Name" required>
+                                <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="lastname" class="col-sm-3 control-label">Webmail:</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" id="webmail" placeholder="Enter Webmail" required>
+                                <input type="text" class="form-control" id="webmail" placeholder="Enter Webmail" name="webmail" required>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="lastname" class="col-sm-3 control-label">Roll Number:</label>
                             <div class="col-sm-9">
-                                <input type="number" class="form-control" id="roll" placeholder="Enter Roll Number" required>
+                                <input type="number" class="form-control" id="roll" placeholder="Enter Roll Number" name="roll" required>
                             </div>
                         </div>
                         <div class="form-group">
@@ -128,35 +129,37 @@
                         <div class="form-group">
                             <label for="lastname" class="col-sm-3 control-label">Category</label>
                             <div class="col-sm-9">
-                                <select class="form-control" id="cat">
-                                    <option value="BTECH">B. Tech</option>
-                                    <option value="MTECH">M. Tech</option>
-                                    <option value="PHD">Ph.D.</option>
-                                    <option value="MSC">M. Sc.</option>
-                                    <option value="FAC">Faculty</option>
+                                <select class="form-control" id="cat" name="cat">
+                                    <option value="BTECH">BTECH</option>
+                                    <option value="MTECH">MTECH</option>
+                                    <option value="PHD">PHD</option>
+                                    <option value="MSC">MSC</option>
+                                    <option value="FAC">FAC</option>
                                 </select>
                             </div>
                         </div>
-                    </form>
+                        <input type="hidden" id="user_id" name="id" value="">
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <input type="submit" class="btn btn-primary" value="Save Changes">
                 </div>
             </div>
+            </form>
         </div>
     </div>
 
     <!-- Modal -->
     <div class="modal fade" id="newModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
+            <form class="form-horizontal" role="form" id="new">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                     <h4 class="modal-title" id="myModalLabel">Modal title</h4>
                 </div>
                 <div class="modal-body">
-                    <form class="form-horizontal" role="form">
                         <div class="form-group">
                             <label for="firstname" class="col-sm-3 control-label">Name:</label>
                             <div class="col-sm-9">
@@ -179,21 +182,21 @@
                             <label for="lastname" class="col-sm-3 control-label">Category</label>
                             <div class="col-sm-9">
                                 <select class="form-control" id="new-cat">
-                                    <option value="BTECH">B. Tech</option>
-                                    <option value="MTECH">M. Tech</option>
-                                    <option value="PHD">Ph. D.</option>
-                                    <option value="MSC">M. Sc.</option>
-                                    <option value="FAC">Faculty</option>
+                                    <option value="BTECH">BTECH</option>
+                                    <option value="MTECH">MTECH</option>
+                                    <option value="PHD">PHD</option>
+                                    <option value="MSC">MSC</option>
+                                    <option value="FAC">FAC</option>
                                 </select>
                             </div>
                         </div>
-                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Create User</button>
+                    <input type="submit" class="btn btn-primary" value="Create User">
                 </div>
             </div>
+            </form>
         </div>
     </div>
 
@@ -208,7 +211,7 @@
                     <p style="font-size: x-large">Do you really want to delete this user ?</p>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-outline">Yes</button>
+                    <button type="button" class="btn btn-outline" value="" id="delbutt" onclick="del_send()">Yes</button>
                     <button type="button" class="btn btn-outline" data-dismiss="modal">No</button>
                 </div>
             </div>
@@ -220,6 +223,8 @@
     <script src="{{ asset('admin_template/plugins/datatables/jquery.dataTables.js') }}" type="text/javascript"></script>
     <script src="{{ asset('admin_template/plugins/datatables/dataTables.bootstrap.js') }}" type="text/javascript"></script>
     <script type="text/javascript">
+        var row=0;
+        //set attribute of datatable
         var table=$('#table').dataTable({
                 "bPaginate": true,
                 "bLengthChange": true,
@@ -228,29 +233,84 @@
                 "bInfo": true,
                 "bAutoWidth": true
             });
-//            $('.edit').click(alert('hi'));
-        function edit(id, cat) {
-//            var row=$(this).attr('id').val();
-//            alert(id);
+        //fill edit modal with values from table
+        function edit(id, cat, user_id) {
             var data=table.fnGetData(id);
             $('#name').val(data[0]);
             $('#webmail').val(data[2]);
             $('#roll').val(data[1]);
             $('#books').html(data[3]);
             $('#fine').html(data[4]);
-            $('#cat').val(cat)
-//            alert(cat);
+            $('#cat').val(cat);
+            $('#user_id').val(user_id);
+            row=id;
             $('#editModal').modal('show');
         }
 
-        function add() {
-            $('#newModal').modal('show');
-        }
-
-        function del(id) {
+        //view modal for delete confirmation
+        function del(id, row_id) {
+            row=row_id;
+            $('#delbutt').val(id);
             $('#deleteModal').modal('show');
         }
 
+        //submit values to edit database
+        $('#edit').on('submit', function(e) {
+            $('#editModal').modal('hide');
+            e.preventDefault();
+            $.ajax({
+                url: '{{ route('func_edit') }}',
+                method: 'POST',
+                data: $('#edit').serialize()
+            })
+                    .success(function (result) {
+                        alert(result);
+                        table.fnUpdate($('#name').val(),row,0);
+                        table.fnUpdate($('#roll').val(),row,1);
+                        table.fnUpdate($('#webmail').val(),row,2);
+                        table.fnUpdate($('#cat').val(),row,5);
+                    })
+                    .fail(function () {
+                        alert('There was an error. Please Try Again');
+                    });
+        });
+
+        //submit values to create the new user
+        $('#new').on('submit', function(e) {
+            $('#newModal').modal('hide');
+            e.preventDefault();
+            $.ajax({
+                url: '{{ route('func_new') }}',
+                method: 'POST',
+                data: $('#new').serialize()
+            })
+                    .success(function (result) {
+                        alert(result);
+                        location.reload();
+                    })
+                    .fail(function () {
+                        alert('There was an error. Please Try Again');
+                    });
+        });
+
+        //delete user
+        function del_send() {
+            $('#deleteModal').modal('hide');
+            $.ajax({
+                url: '{{ route('func_del') }}',
+                method: 'POST',
+                data: {type: 'user', id: $('#delbutt').val() }
+            })
+                    .success(function (result) {
+                        alert(result);
+                        table.fnDeleteRow(row);
+                    })
+                    .fail(function () {
+                        alert('There was an error. Please Try Again');
+                    })
+        }
+
+        //position modal in center of page
         $(function() {
             function reposition() {
                 var modal = $(this),

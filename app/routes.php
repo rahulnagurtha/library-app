@@ -32,7 +32,10 @@ Route::get('admin/logout', ['as' => 'adminlogout', 'uses' => 'AdminController@lo
 Route::get('admin/update', ['as' => 'adminupdate', 'uses' => 'AdminController@update']);
 Route::get('admin/lostbook', ['as' => 'adminlostbook', 'uses' => 'AdminController@lost']);
 Route::get('admin/user', ['as' => 'adminuser', 'uses' => 'AdminController@userprofile']);
-Route::get('admin/tables/users', ['as' => 'tabuser', 'uses' => 'AdminController@tabusers']);
+Route::get('admin/tables/users', ['as' => 'tabusers', 'uses' => 'AdminController@tabusers']);
+Route::post('func/edit', ['as' => 'func_edit', 'uses' => 'HomeController@func_edit']);
+Route::post('func/new', ['as' => 'func_new', 'uses' => 'HomeController@func_add']);
+Route::post('func/delete', ['as' => 'func_del', 'uses' => 'HomeController@func_del']);
 
 Route::group(array('before'=>'auth.admin'),function()
 {

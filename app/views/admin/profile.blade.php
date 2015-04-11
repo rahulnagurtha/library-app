@@ -204,7 +204,7 @@
                             <tr>
                                 <th>Amount Payable</th>
                                 <td>
-                                    <form role="form">
+                                    <form role="form" id="fine">
                                         <div class="form-group">
                                             <input type="number" class="form-control" placeholder="Dues">
                                         </div>
@@ -212,7 +212,6 @@
                                 </td>
                             </tr>
                         </table>
-                        <button type="button" class="btn pull-right btn-sm btn-info" onclick="#">Paid</button>
                     </div>
 
                     </br>
