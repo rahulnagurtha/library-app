@@ -19,15 +19,13 @@ class Book extends Eloquent
         return $this->belongsTo('Publication');
     }
 
-
     function user() {
         return $this->belongsTo('User','issue');
     }
 
-    function lost(){
+    function lostbook(){
         return $this->hasOne('LostBook');
     }
-
 
     function transaction(){
         return $this->hasMany('Transaction');

@@ -252,144 +252,12 @@
         <!-- Lost Modal -->
 
         <div class="modal fade" id="lost" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content " style="color:#00a65a">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel">Lost Book Panel</h4>
-                    </div>
-                    <div class="modal-body">
+            <div class="modal-dialog" style="width: 900px">
+                <form class="form-horizontal" role="form" id="lost_form">
+                <div class="modal-content " style="color:#00a65a" id="lost_book">
 
-                        <table class="table table-hover">
-                            <tbody>
-                            <tr>
-                                <th>Attribute</th>
-                                <th>Old</th>
-                                <th>New</th>
-                            </tr>
-                            <tr>
-                                <th>Name</th>
-                                <td>Introduction to Algorithm</td>
-                                <td><input type="text" class="form-control" id="title"></td>
-                            </tr>
-                            <tr>
-                                <th>Authors</th>
-                                <td>Charles E. Leiserson, Thomas H. Cormen, Clifford Stein, Ronald Rivest</td>
-                                <td><input type="text" class="form-control" id="authors"></td>
-                            </tr>
-                            <tr>
-                                <th>Publication</th>
-                                <td>3rd Edition</td>
-                                <td><input type="" class="form-control" id="edition"></td>
-                            </tr>
-                            <tr>
-                                <th>ISBN</th>
-                                <td>9781423724605</td>
-                                <td><input type="number" class="form-control" id="ISBN"></td>
-                            </tr>
-                            <tr>
-                                <th>Publication</th>
-                                <td>PHI</td>
-                                <td><input type="text" class="form-control" id="publication"></td>
-                            </tr>
-                            <tr>
-                                <th>Book Code</th>
-                                <td>4545</td>
-                                <td><input type="number" class="form-control" id="code"></td>
-                            </tr>
-                            </tbody>
-                        </table>
-
-                        <div class="modal-footer">
-
-                            Book lost by  <strong>//{ $usr }}</strong>
-
-                        </div>
-                        <button type="button" class="btn-md btn-flat btn-primary pull-right">
-                            Added
-                        </button>
-                        </br>
-                        <!--
-                            <div class="row">
-                                <div class="col-md-4">
-                                    Name of the Book:
-                                </div>
-                                <div class="col-md-4">
-                                     // $old->title}}
-                                </div>
-                                <div class="col-md-4">
-                                    // $new->title}}
-
-                                </div>
-                            </div>
-                            <br />
-                            <div class="row">
-                                <div class="col-md-4">
-                                    Authors of the book:
-                                </div>
-                                <div class="col-md-4">
-                                    //{ $old->authors }}
-                                </div>
-                                <div class="col-md-4">
-                                    //{ $new->authors }}
-                                </div>
-                            </div>
-                            <br />
-                            <div class="row">
-                                <div class="col-md-4">
-                                    Edition of book:
-                                </div>
-                                <div class="col-md-4">
-                                    //{ $old->edition }}
-                                </div>
-                                <div class="col-md-4">
-                                    //{ $new->edition }}
-                                </div>
-                            </div>
-                            <br />
-                            <div class="row">
-                                <div class="col-md-4">
-                                    ISBN of the book:
-                                </div>
-                                <div class="col-md-4">
-                                    //{ $old->ISBN }}
-                                </div>
-                                <div class="col-md-4">
-                                    //{ $new->ISBN }}
-                                </div>
-                            </div>
-                            <br />
-                            <div class="row">
-                                <div class="col-md-4">
-                                    Publication of the book:
-                                </div>
-                                <div class="col-md-4">
-                                    //{ $new->publication }}
-                                </div>
-                                <div class="col-md-4">
-                                    //{ $pub }}
-                                </div>
-                            </div>
-                            <br />
-                            <div class="row">
-                                <div class="col-md-4">
-                                    Code of the book:
-                                </div>
-                                <div class="col-md-4">
-                                    //{ $new->code }}
-                                </div>
-                                <div class="col-md-4">
-                                    //{ $old->code  }}
-                                </div>
-                            </div>-
-                            <br />
-                        </div>-->
-
-
-
-
-                    </div>
                 </div>
+                </form>
             </div>
         </div>
 
@@ -403,35 +271,34 @@
                             <h4 class="modal-title" id="myModalLabel">Edit User Details</h4>
                         </div>
                         <div class="modal-body">
-
                             <div class="form-group">
                                 <label for="firstname" class="col-sm-3 control-label">Name:</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" required>
+                                    <input type="text" class="form-control" id="name" placeholder="Enter Name" name="name" value="{{ $user->name }}" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="lastname" class="col-sm-3 control-label">Webmail:</label>
                                 <div class="col-sm-9">
-                                    <input type="text" class="form-control" id="webmail" placeholder="Enter Webmail" name="webmail" required>
+                                    <input type="text" class="form-control" id="webmail" placeholder="Enter Webmail" name="webmail" value="{{ $user->webmail }}" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="lastname" class="col-sm-3 control-label">Roll Number:</label>
                                 <div class="col-sm-9">
-                                    <input type="number" class="form-control" id="roll" placeholder="Enter Roll Number" name="roll" required>
+                                    <input type="number" class="form-control" id="roll" placeholder="Enter Roll Number" name="roll" value="{{ $user->roll }}" required>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="lastname" class="col-sm-3 control-label">Books Issued</label>
                                 <div class="col-sm-9">
-                                    <label class="control-label" style="font-weight: 500" id="books"></label>
+                                    <label class="control-label" style="font-weight: 500" id="books"> {{ $user->no_books_issued }}</label>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="lastname" class="col-sm-3 control-label">Fine</label>
                                 <div class="col-sm-9">
-                                    <label class="control-label" style="font-weight: 500" id="fine"></label>
+                                    <label class="control-label" style="font-weight: 500" id="fine">{{ $user->fine }}</label>
                                 </div>
                             </div>
                             <div class="form-group">
@@ -446,7 +313,7 @@
                                     </select>
                                 </div>
                             </div>
-                            <input type="hidden" id="user_id" name="id" value="">
+                            <input type="hidden" id="user_id" name="id" value="{{ $user->id }}">
 
                         </div>
                         <div class="modal-footer">
@@ -528,6 +395,37 @@
                             alert('There was an error. Please Try Again');
                         });
             }
+        }
+
+        function issue(code) {
+            user=$('#user').val();
+            $.ajax({
+                url: '{{ route('func_issue_book') }}',
+                method: 'POST',
+                data: {code: code, user: user }
+            })
+                    .success(function (result) {
+                        alert(result);
+                    })
+                    .fail(function () {
+                        alert('There was an error. Please Try Again');
+                    });
+        }
+
+        function lost(code) {
+            $.ajax({
+                url: '{{ route('func_lost_book') }}',
+                method: 'POST',
+                data: {code: code}
+            })
+                    .success(function (result) {
+                        $('#lost_book').html(result);
+                        $('#lost').modal('show');
+//                        alert(result);
+                    })
+                    .fail(function () {
+                        alert('There was an error. Please Try Again');
+                    });
         }
     </script>
 

@@ -33,12 +33,15 @@ Route::get('admin/update', ['as' => 'adminupdate', 'uses' => 'AdminController@up
 Route::get('admin/lostbook', ['as' => 'adminlostbook', 'uses' => 'AdminController@lost']);
 Route::get('admin/user', ['as' => 'adminuser', 'uses' => 'AdminController@userprofile']);
 Route::get('admin/tables/users', ['as' => 'tabusers', 'uses' => 'AdminController@tabusers']);
+Route::get('admin/tables/books', ['as' => 'tabbooks', 'uses' => 'AdminController@tabbooks']);
 Route::post('func/edit', ['as' => 'func_edit', 'uses' => 'HomeController@func_edit']);
 Route::post('func/new', ['as' => 'func_new', 'uses' => 'HomeController@func_add']);
 Route::post('func/delete', ['as' => 'func_del', 'uses' => 'HomeController@func_del']);
 Route::post('func/bookDetail', ['as' => 'func_book_detail', 'uses' => 'HomeController@book_detail']);
 Route::post('func/payFine', ['as' => 'func_pay_fine', 'uses' => 'HomeController@pay_fine']);
 Route::post('func/showBook', ['as' => 'func_show_book', 'uses' => 'HomeController@show_book']);
+Route::post('func/issueBook', ['as' => 'func_issue_book', 'uses' => 'HomeController@issue_book']);
+Route::post('func/lostBook', ['as' => 'func_lost_book', 'uses' => 'HomeController@lost_book']);
 
 Route::group(array('before'=>'auth.admin'),function()
 {

@@ -100,4 +100,9 @@ class AdminController extends BaseController {
     {
         return View::make('admin.tables.users');
     }
+
+    public function tabbooks()
+    {
+        return View::make('admin.tables.books');
+    }
 }

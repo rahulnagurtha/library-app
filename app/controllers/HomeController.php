@@ -104,4 +104,24 @@ class HomeController extends BaseController {
         return View::make('functions.show_book')->with('book', $book);
     }
 
+    public function issue_book() {
+        $code=Input::get('code');
+        $book=Book::where('code',$code)->first();
+        $book->issue=intval(Input::get('user'));
+        if($book->save()) {
+            return 'Book Successfully Issued';
+        }
+        else {
+            return 'Error occured while issuing. Please try again.';
+        }
+    }
+
+    public function lost_book() {
+        $code=Input::get('code');
+//        return $code;
+        $book=Book::where('id',$code)->first();
+//        return $book->lostbook->title;
+        return View::make('functions.lost_book')->with('book',$book);
+    }
+
 }

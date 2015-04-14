@@ -59,7 +59,7 @@
     <button type="button" class="btn btn-flat btn-info">Return</button>
     <button type="button" class="btn btn-flat btn-warning">Reissue</button>
     @else
-    <button type="button" class="btn btn-flat  btn-danger" data-toggle="modal" data-target="#lost">Lost</button>
+    <button type="button" class="btn btn-flat  btn-danger" onclick="lost({{ $book->id }})">Return Lost Book</button>
     @endif
     <button type="button" class="btn btn-flat btn-danger" data-dismiss="modal">Close</button>
 </div>

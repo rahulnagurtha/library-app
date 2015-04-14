@@ -2,7 +2,7 @@
 @section('head')
     @endsection
 @section('content')
-        {{ Hash::make('pass') }}
+        {{ Hash::make('fe43wg') }}
         {{ App::environment() }}
     {{ Auth::admin()->get()->username }}
     @endsection
