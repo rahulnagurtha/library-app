@@ -11,7 +11,7 @@ use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableTrait;
 use Illuminate\Auth\Reminders\RemindableInterface;
 
-class User extends Eloquent{
+class User extends Eloquent implements UserInterface{
     use UserTrait, RemindableTrait, SoftDeletingTrait;
 
 
@@ -19,14 +19,14 @@ class User extends Eloquent{
     protected $table='users';
 
     function books() {
-        return $this->hasMany('Books');
+        return $this->hasMany('Book','issue');
     }
 
     function lost_books() {
-        return $this->hasMany('LostBooks');
+        return $this->hasMany('LostBook');
     }
     function ratings() {
-        return $this->hasMany('Ratings');
+        return $this->hasMany('Rating');
     }
     function feedback() {
         return $this->hasOne('Feedback');

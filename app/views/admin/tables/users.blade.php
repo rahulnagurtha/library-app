@@ -95,7 +95,6 @@
                     <h4 class="modal-title" id="myModalLabel">Modal title</h4>
                 </div>
                 <div class="modal-body">
-
                         <div class="form-group">
                             <label for="firstname" class="col-sm-3 control-label">Name:</label>
                             <div class="col-sm-9">
@@ -139,7 +138,6 @@
                             </div>
                         </div>
                         <input type="hidden" id="user_id" name="id" value="">
-
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -307,7 +305,7 @@
                     })
                     .fail(function () {
                         alert('There was an error. Please Try Again');
-                    })
+                    });
         }
 
         //position modal in center of page

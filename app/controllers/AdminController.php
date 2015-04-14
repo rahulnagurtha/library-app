@@ -70,6 +70,7 @@ class AdminController extends BaseController {
 //            $message->from('a.dash@iitg.ernet.in', 'Aneesh Dash');
 //            $message->to('aneeshdash@gmail.com', 'Aneesh Dash')->subject('Hello!');
 //        });
+        Log::info('hi');
         return View::make('admin.home');
     }
 
@@ -85,7 +86,14 @@ class AdminController extends BaseController {
 
     public function userprofile()
     {
-        return View::make('admin.profile');
+        return View::make('admin.profile')->with('user', User::find(1));
+    }
+
+    public function postuserprofile()
+    {
+        $roll=Input::get('roll');
+        $user=User::where('roll', intval($roll))->first();
+        return View::make('admin.profile')->with('user', $user);
     }
 
     public function tabusers()

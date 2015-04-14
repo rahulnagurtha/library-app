@@ -24,7 +24,6 @@ class Book extends Eloquent
         return $this->belongsTo('User','issue');
     }
 
-
     function lost(){
         return $this->hasOne('LostBook');
     }
